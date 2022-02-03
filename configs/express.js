@@ -2,8 +2,8 @@ const express = require('express')
 
 module.exports = async (app) => {
 
-  // Connect database
-  // import('../configs')
+  //Connect database
+  require('../configs/database')
 
   // Parser Body
   app.use(express.json())
