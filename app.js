@@ -4,6 +4,8 @@ const config = require('./configs/app')
 
 require('./configs/express')(app)
 
+app.use(require('./routes'))
+
 const server = app.listen(config.port, () => {
   let host = server.address().address
   let port = server.address().port

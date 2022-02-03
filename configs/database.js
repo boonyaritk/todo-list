@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const config = require('../configs/app')
 
-const databases = {
+const database = {
 
   mongoDB(){
     const db = mongoose.connect(config.mongodbUri, error => {
@@ -13,4 +13,4 @@ const databases = {
 
 }
 
-module.exports = databases.mongoDB()
+module.exports = database.mongoDB()
