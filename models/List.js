@@ -1,21 +1,20 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema ({
-  name: {
+  title: {
     type: String,
     required: true
   },
-  status: {
+  completed: {
+    type: Boolean,
+    required: true
+  },
+  createdAt: {
     type: String,
     required: true
   },
-  createAt: {
-    type: Date,
-    required: true
-  },
-  endAt: {
-    type: Date,
-    required: true
+  endedAt: {
+    type: String,
   },
 })
 

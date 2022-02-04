@@ -1,7 +1,4 @@
 const List = require('../models/List')
-const config = require('../configs/app')
-const moment = require('moment');
-// const { ErrorBadRequest, ErrorNotFound, ErrorUnauthorized } = require('../configs/errorMethods')
 
 module.exports = { 
   async find() {
@@ -22,13 +19,13 @@ module.exports = {
       throw new Error(error);
     }
   },
-  async update(id, date) {
+  async update(id, data) {
     try {
       const oldCollection = await List.findById(id)
       if (!oldCollection) {
         throw new Error('id: not found');
       }
-      const updated = await List.updateOne({ _id: id }, date)
+      const updated = await List.updateOne({ _id: id }, data)
       return updated;
     } catch (error) {
       throw new Error(error);

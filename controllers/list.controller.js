@@ -4,16 +4,7 @@ const methods = {
   async onGetAll(req, res) {
     try {
       let result = await Service.find(req)
-      res.status(200).json({ data: result });
-    } catch (error) {
-      res.status(404).json({ data: error });
-    }
-  },
-
-  async onGetById(req, res) {
-    try {
-      let result = await Service.findById(req.params.id)
-      res.status(200).json({ data: result });
+      res.send(result);
     } catch (error) {
       res.status(404).json({ data: error });
     }
@@ -39,7 +30,7 @@ const methods = {
 
   async onDelete(req, res) {
     try {
-      await Service.delete(req.params.id)
+      const result = await Service.delete(req.params.id)
       res.status(200).json({ data: result });
     } catch (error) {
       res.status(404).json({ data: error });
